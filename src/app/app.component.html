@@ -1,1 +1,31 @@
-<h1>{{ title}}</h1>
+<!-- create template for password generator -->
+<div class="field">
+
+  <h2>Password Generator</h2>
+  <div>
+    <label>Enter length</label>
+    <input type="number" (keyup)="getLength(value.value)" #value placeholder="0" />
+  </div>
+  <div>
+    <label>Use Letters</label>
+    <input type="checkbox" (change)="getLetters()" />
+  </div>
+  <div>
+    <label>Use Numbers</label>
+    <input type="checkbox" (change)="getNumbers()" />
+  </div>
+  <div>
+    <label>Use Symbols</label>
+    <input type="checkbox" (change)="getSymbols()" />
+  </div>
+
+  <div>
+    <button (click)="generate()"
+      [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols) )">Generate</button>
+  </div>
+
+  <div *ngIf="password">
+    <label>Your password is </label>
+    <input [value]="password" />
+  </div>
+</div>
