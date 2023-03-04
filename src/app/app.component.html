@@ -1,5 +1,5 @@
 <!-- create template for password generator -->
-<div class="field">
+<div class="wrapper">
 
   <h2>Password Generator</h2>
   <div>
@@ -19,13 +19,12 @@
     <input type="checkbox" (change)="getSymbols()" />
   </div>
 
-  <div>
-    <button (click)="generate()"
-      [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols) )">Generate</button>
+  <div *ngIf="(length && (includeLetters || includeNumbers || includeSymbols))">
+    <button (click)="generate()">Generate</button>
   </div>
 
   <div *ngIf="password">
     <label>Your password is </label>
-    <input [value]="password" />
+    <h3>{{password}}</h3>
   </div>
 </div>

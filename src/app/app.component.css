@@ -1,0 +1,12 @@
+.wrapper {
+  border:1px solid black;
+  display: grid;
+  justify-content: center;
+}
+
+button {
+  background-color: rgb(23, 124, 192);
+  color:white;
+  border:none;
+  margin: 1.5rem;
+}
